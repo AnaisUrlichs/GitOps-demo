@@ -5,7 +5,7 @@ metadata:
   namespace: flux-system
 spec:
   interval: 1m
-  url: <https://github.com/AnaisUrlichs/GitOps-demo/app/manifests>
+  url: https://github.com/AnaisUrlichs/GitOps-demo
   ref:
     branch: main
 ---
@@ -15,8 +15,8 @@ metadata:
   name: react-app
   namespace: flux-system
 spec:
-  interval: 1m0s
-  path: ./
+  interval: 1m
+  path: ./app/manifests
   prune: true
   sourceRef:
     kind: GitRepository

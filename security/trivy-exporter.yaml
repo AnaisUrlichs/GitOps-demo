@@ -5,7 +5,7 @@ metadata:
   namespace: flux-system
 spec:
   interval: 1m0s
-  url: <https://giantswarm.github.io/giantswarm-catalog>
+  url: https://giantswarm.github.io/giantswarm-catalog
 
 ---
 apiVersion: helm.toolkit.fluxcd.io/v2beta1

@@ -5,7 +5,7 @@ metadata:
   namespace: flux-system
 spec:
   interval: 30m
-  url: <https://github.com/fluxcd/flux2>
+  url: https://github.com/fluxcd/flux2
   ref:
     branch: main
 ---
@@ -22,7 +22,4 @@ spec:
     kind: GitRepository
     name: flux-monitoring
   targetNamespace: monitoring
-
-  --health-check-timeout=5m \
-  --wait
 
