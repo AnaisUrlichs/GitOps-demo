@@ -1,0 +1,24 @@
+apiVersion: source.toolkit.fluxcd.io/v1beta2
+kind: GitRepository
+metadata:
+  name: react-app
+  namespace: flux-system
+spec:
+  interval: 1m
+  url: <https://github.com/AnaisUrlichs/GitOps-demo/app/manifests>
+  ref:
+    branch: main
+---
+apiVersion: kustomize.toolkit.fluxcd.io/v1beta2
+kind: Kustomization
+metadata:
+  name: react-app
+  namespace: flux-system
+spec:
+  interval: 1m0s
+  path: ./
+  prune: true
+  sourceRef:
+    kind: GitRepository
+    name: react-app
+  targetNamespace: app

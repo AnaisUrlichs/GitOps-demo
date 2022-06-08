@@ -1,0 +1,28 @@
+apiVersion: source.toolkit.fluxcd.io/v1beta2
+kind: GitRepository
+metadata:
+  name: flux-monitoring
+  namespace: flux-system
+spec:
+  interval: 30m
+  url: <https://github.com/fluxcd/flux2>
+  ref:
+    branch: main
+---
+apiVersion: kustomize.toolkit.fluxcd.io/v1beta2
+kind: Kustomization
+metadata:
+  name: kube-prometheus-stack
+  namespace: flux-system
+spec:
+  interval: 1h
+  path: ./manifests/monitoring/kube-prometheus-stack
+  prune: true
+  sourceRef:
+    kind: GitRepository
+    name: flux-monitoring
+  targetNamespace: monitoring
+
+  --health-check-timeout=5m \
+  --wait
+
