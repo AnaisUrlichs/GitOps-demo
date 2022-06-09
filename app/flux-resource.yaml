@@ -5,7 +5,7 @@ metadata:
   namespace: flux-system
 spec:
   interval: 1m
-  url: https://github.com/AnaisUrlichs/react-article-display
+  url: https://github.com/AnaisUrlichs/GitOps-demo
   ref:
     branch: main
   ignore: |
