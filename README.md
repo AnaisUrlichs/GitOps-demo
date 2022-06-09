@@ -27,5 +27,5 @@ kubectl apply -f security
 
 Now you can access the Flux dashboard in Grafana 
 ```
-kubectl port-forward 
+kubectl -n monitoring port-forward svc/kube-prometheus-stack-grafana 3000:80
 ```
