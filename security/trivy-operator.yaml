@@ -4,7 +4,7 @@ metadata:
   name: trivy-operator
   namespace: flux-system
 spec:
-  interval: 1m0s
+  interval: 60m
   url: https://aquasecurity.github.io/helm-charts/
 
 ---
@@ -22,4 +22,4 @@ spec:
         name: trivy-operator
 				namespace: flux-system
       version: 0.0.5
-  interval: 1m0s
+  interval: 60m
